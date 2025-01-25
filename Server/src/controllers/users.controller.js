@@ -32,6 +32,8 @@ const registerUser = async (req, res) => {
     email,
     password,
   });
+  console.log(createUser);
+  
   res.json({ message: "user registered successfully", data: createUser });
 };
 

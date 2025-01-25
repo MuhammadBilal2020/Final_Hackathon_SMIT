@@ -39,7 +39,7 @@ function Login() {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            required
+           
             className="w-full p-3 border border-gray-300 rounded-md"
           />
           <input
@@ -48,7 +48,7 @@ function Login() {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            required
+           
             className="w-full p-3 border border-gray-300 rounded-md"
           />
           <button

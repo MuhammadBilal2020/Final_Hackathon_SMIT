@@ -9,11 +9,11 @@ const app = express();
 
 // Enable CORS for your frontend (local and prod environments)
 app.use(cors({
-  origin: [
-    "https://final-hackathon-smit-ll5f.vercel.app", // Frontend production URL
-  ],
+  origin: '*', // Allow all origins
   credentials: true, // To allow cookies and credentials
+  
 }));
+
 
 app.use(express.json());
 

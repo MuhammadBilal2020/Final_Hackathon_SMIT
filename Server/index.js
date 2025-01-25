@@ -12,6 +12,9 @@ app.use(
   })
 );
 
+app.options('/api/v1/register', cors()); // Handle preflight requests
+
+
 dotenv.config();
 const app = express()
 app.use(express.json());

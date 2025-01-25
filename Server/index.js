@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Frontend URL
+    origin: "https://final-hackathon-smit.vercel.app", // Frontend URL
     credentials: true, // To allow cookies
   })
 );

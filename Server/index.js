@@ -8,11 +8,12 @@ import cors from "cors";
 app.use(
   cors({
     origin: "https://final-hackathon-smit.vercel.app", // Frontend URL
+    methods: ['Get', 'Post', 'Delete', 'Update'],
     credentials: true, // To allow cookies
   })
 );
 
-app.options('/api/v1/register', cors()); // Handle preflight requests
+// app.options('/api/v1/register', cors()); // Handle preflight requests
 
 
 dotenv.config();

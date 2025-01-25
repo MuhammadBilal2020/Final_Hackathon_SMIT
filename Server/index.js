@@ -7,9 +7,7 @@ import cors from "cors";
 
 app.use(
   cors({
-    origin: "https://final-hackathon-smit.vercel.app", // Frontend URL
-    methods: ['Get', 'Post', 'Delete', 'Update'],
-    credentials: true, // To allow cookies
+    origin: "*"
   })
 );
 

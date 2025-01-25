@@ -5,8 +5,14 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 
+app.use(
+  cors({
+    origin: "https://final-hackathon-smit.vercel.app", // Frontend URL
+    credentials: true, // To allow cookies
+  })
+);
 
-dotenv.config(); 
+dotenv.config();
 const app = express()
 app.use(express.json());
 
@@ -14,12 +20,7 @@ app.get('/', (req, res) => {
   res.send('Final')
 })
 
-app.use(
-  cors({
-    origin: "https://final-hackathon-smit.vercel.app", // Frontend URL
-    credentials: true, // To allow cookies
-  })
-);
+
 
 // routes
 app.use("/api/v1", userRoutes);

@@ -8,7 +8,7 @@ function Register() {
     email: "",
     password: "",
   });
-  let navigate = useNavigate()
+  const navigate = useNavigate(); // Changed let to const
 
   const [message, setMessage] = useState("");
 
@@ -21,8 +21,7 @@ function Register() {
     try {
       const response = await API.post("/register", formData);
       console.log("Register Successfuly");
-navigate("/login")
-      
+      navigate("/login"); // Redirect to login page after successful registration
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response.data.message || "Error occurred");

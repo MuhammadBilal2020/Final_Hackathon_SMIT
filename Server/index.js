@@ -1,32 +1,34 @@
-import express from "express"
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
 import connectDB from "./src/db/index.js";
 import userRoutes from "./src/routes/users.route.js";
-import dotenv from "dotenv";
-import cors from "cors";
 
+dotenv.config();
+const app = express();
 
+// Enable CORS for your frontend (local and prod environments)
+app.use(cors({
+  origin: [
+    "https://final-hackathon-smit-ll5f.vercel.app", // Frontend production URL
+  ],
+  credentials: true, // To allow cookies and credentials
+}));
 
-dotenv.config(); 
-const app = express()
 app.use(express.json());
 
+// Basic route
 app.get('/', (req, res) => {
-  res.send('Final')
-})
+  res.send('Final');
+});
 
-app.use(
-  cors({
-    origin: "http://localhost:5173", // Frontend URL
-    credentials: true, // To allow cookies
-  })
-);
-
-// routes
+// API routes
 app.use("/api/v1", userRoutes);
 
+// Connect to the database and start the server
 connectDB()
   .then(() => {
-    const PORT = process.env.PORT || 3000; // Default port set if not provided
+    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
       console.log(`⚙️  Server is running at port : ${PORT}`);
     });

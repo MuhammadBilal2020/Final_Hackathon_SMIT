@@ -26,8 +26,9 @@ app.use("/api/v1", userRoutes);
 
 connectDB()
   .then(() => {
-    app.listen(process.env.PORT, () => {
-      console.log(`⚙️  Server is running at port : ${process.env.PORT}`);
+    const PORT = process.env.PORT || 3000; // Default port set if not provided
+    app.listen(PORT, () => {
+      console.log(`⚙️  Server is running at port : ${PORT}`);
     });
   })
   .catch((err) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import LoanCard from "../compoents/loadcard";
+
 import Footer from "../compoents/Footer";
 import Header from "../compoents/Navbar";
 
@@ -17,30 +17,7 @@ const LandingPage = () => {
           </p>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <LoanCard
-            title="Wedding Loans"
-            subcategories={["Valima", "Furniture", "Valima Food", "Jahez"]}
-            maxLoan="PKR 5 Lakh"
-            period="3 years"
-          />
-          <LoanCard
-            title="Home Construction Loans"
-            subcategories={["Structure", "Finishing", "Loan"]}
-            maxLoan="PKR 10 Lakh"
-            period="5 years"
-          />
-          <LoanCard
-            title="Business Startup Loans"
-            subcategories={["Buy Stall", "Advance Rent for Shop", "Shop Assets", "Shop Machinery"]}
-            maxLoan="PKR 10 Lakh"
-            period="5 years"
-          />
-          <LoanCard
-            title="Education Loans"
-            subcategories={["University Fees", "Child Fees Loan"]}
-            maxLoan="Based on requirement"
-            period="4 years"
-          />
+         
         </section>
       </main>
       <Footer />

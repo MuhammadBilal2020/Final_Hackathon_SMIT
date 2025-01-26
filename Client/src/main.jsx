@@ -1,31 +1,36 @@
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import LandingPage from './screens/LandingPage';
+import LoanCategories from './screens/LoanCategories';
+import UserDashboard from './screens/UserDashboard';
+import AdminDashboard from './screens/AdminDashboard';
+import LoginPage from './screens/LoginPage';
 
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Register from './screens/Register/Register.jsx'
-import Login from './screens/Login/Login.jsx'
 
 const router = createBrowserRouter([
   {
-    path: '',
-    element: <App />,
+    path: '/',
+    element: <LandingPage />,
   },
   {
-    path : 'register',
-    element : <Register/>
+    path: 'loan-categories',
+    element: <LoanCategories />,
   },
   {
-    path : 'login',
-    element : <Login/>
+    path: 'user-dashboard',
+    element: <UserDashboard />,
   },
-
-])
+  {
+    path: 'admin-dashboard',
+    element: <AdminDashboard />,
+  },
+  {
+    path: 'login',
+    element: <LoginPage />,
+  },
+]);
 
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}>
-
-    <App />
-  </RouterProvider>
-  
-)
+  <RouterProvider router={router} />
+);

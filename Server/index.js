@@ -5,11 +5,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 
-app.use(
-  cors({
-    origin: "*"
-  })
-);
+
 
 // app.options('/api/v1/register', cors()); // Handle preflight requests
 
@@ -17,6 +13,12 @@ app.use(
 dotenv.config();
 const app = express()
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "*"
+  })
+);
 
 app.get('/', (req, res) => {
   res.send('Final')
